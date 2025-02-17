@@ -115,6 +115,8 @@ export async function syncUserDevices(
         return [];
       }
 
+      console.log('Devices to insert:', devicesToInsert);
+
       const { data: insertedDevices, error: insertError } = await supabase
         .from('user_devices')
         .insert(devicesToInsert)
