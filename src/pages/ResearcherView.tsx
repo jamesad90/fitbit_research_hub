@@ -8,7 +8,7 @@ import DataVisualization from '../components/researcher/DataVisualization';
 import GroupManagement from '../components/researcher/GroupManagement';
 import { syncAllParticipants } from '../services/fitbitSync';
 import { syncUserDevices } from '../services/fitbitDevices';
-import type { UserProfile } from '../types/researcher';
+import type { UserProfile, DataPoint, GroupStats } from '../types/researcher';
 
 export default function ResearcherView() {
   const [participants, setParticipants] = useState<UserProfile[]>([]);
@@ -31,6 +31,8 @@ export default function ResearcherView() {
   const [dataLoading, setDataLoading] = useState(false);
   const [timeseriesData, setTimeseriesData] = useState<DataPoint[]>([]);
   const [groupStats, setGroupStats] = useState<GroupStats[]>([]);
+
+
   useEffect(() => {
     const fetchInitialData = async () => {
       try {
@@ -64,6 +66,7 @@ export default function ResearcherView() {
 
     return () => clearInterval(interval);
   }, []);
+  console.log("codes", codes);
 
 
 

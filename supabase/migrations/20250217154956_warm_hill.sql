@@ -73,7 +73,7 @@ CREATE POLICY "invitation_codes_select_policy"
   ON invitation_codes
   FOR SELECT
   TO public
-  USING (used_at IS NULL AND expires_at > now());
+  USING (expires_at > now());
 
 CREATE POLICY "invitation_codes_insert_policy"
   ON invitation_codes
