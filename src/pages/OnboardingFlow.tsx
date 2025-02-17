@@ -56,7 +56,7 @@ export default function OnboardingFlow() {
         <div className="text-center">
           <ActivitySquare className="w-16 h-16 text-indigo-600 mx-auto" />
           <h1 className="mt-6 text-4xl font-extrabold text-gray-900 tracking-tight">
-            Welcome to Health Dashboard
+            Welcome to UoL *Study Name* Participant Dashboard
           </h1>
           <p className="mt-4 text-xl text-gray-500">
             Let's get you set up with your Fitbit device to start tracking your health data.
