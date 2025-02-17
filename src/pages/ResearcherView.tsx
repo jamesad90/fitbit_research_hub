@@ -136,7 +136,7 @@ const fetchVisualizationData = async () => {
     setTimeseriesData(processedData.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()));
 
     // Calculate group statistics
-    const groupData = data.reduce((acc: any, record: any) => {
+    const groupData = data.reduce((acc: Record<string, number[]>, record: any) => {
       const group = record.user_profiles.group_name || 'No Group';
       if (!acc[group]) acc[group] = [];
       
@@ -161,9 +161,9 @@ const fetchVisualizationData = async () => {
       
       if (value !== null) acc[group].push(value);
       return acc;
-    }, {});
+    }, {} as Record<string, number[]>);
 
-    const stats = Object.entries(groupData).map(([group, values]: [string, number[]]) => ({
+    const stats = Object.entries(groupData).map(([group, values]) => ({
       group,
       mean: values.length ? values.reduce((a, b) => a + b, 0) / values.length : 0,
       sd: calculateStandardDeviation(values),
