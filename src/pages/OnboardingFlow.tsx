@@ -16,7 +16,7 @@ export default function OnboardingFlow() {
 
     const clientId = import.meta.env.VITE_FITBIT_CLIENT_ID;
     const redirectUri = import.meta.env.VITE_FITBIT_REDIRECT_URI;
-    const scope = 'activity heartrate sleep oxygen_saturation respiratory_rate temperature electrocardiogram devices';
+    const scope = 'activity heartrate sleep oxygen_saturation respiratory_rate temperature electrocardiogram settings';
     
     // Store the current URL in session storage
     sessionStorage.setItem('fitbitRedirectUrl', window.location.href);
